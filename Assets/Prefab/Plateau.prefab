@@ -1354,6 +1354,7 @@ GameObject:
   - component: {fileID: 4513333308970184152}
   - component: {fileID: 8339322247018418859}
   - component: {fileID: 7750643495168313512}
+  - component: {fileID: 2206041328316747838}
   m_Layer: 0
   m_Name: Plateau
   m_TagString: Plateau
@@ -1477,3 +1478,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlacementSymboles
   symboleX: {fileID: 5000766613602115684, guid: 3ffc0f69204cacf4b9ac2eadf465122c, type: 3}
   symboleO: {fileID: 3650492484390681356, guid: 43f6c2ded5711b740b8c22e185d96f20, type: 3}
+--- !u!95 &2206041328316747838
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8506866871489680226}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00a16da332aa86842b0e271ebe3d40d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

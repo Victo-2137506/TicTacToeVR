@@ -4,7 +4,7 @@ using TMPro;
 
 /// <summary>
 /// Code permettant de poser le plateau de jeu.
-/// Gère aussi l'affichage des textes UI (scanner / tour de jeu).
+/// Code pris des notes de cours et de l'exercice des cubes.
 /// </summary>
 public class PlacementTicTacToe : MonoBehaviour
 {
@@ -23,6 +23,7 @@ public class PlacementTicTacToe : MonoBehaviour
 
     void Update()
     {
+        // Si le plateau est déjà posé, on sort.
         if (objetInstance != null) return;
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -32,10 +33,14 @@ public class PlacementTicTacToe : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                // Calcule la rotation pour aligner le plateau
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 objetInstance = Instantiate(objetAPlacer, hit.point, rotation);
 
+                // Une fois posé, on cache le texte
                 if (texteScanner != null) texteScanner.gameObject.SetActive(false);
+
+                // Une fois posé. on affiche le texte de tour
                 if (texteTour != null)
                 {
                     texteTour.gameObject.SetActive(true);
@@ -48,8 +53,12 @@ public class PlacementTicTacToe : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Permet de supprimer le plateau de jeu.
+    /// </summary>
     public void SupprimerPlateau()
     {
+        // Si un plateau existe, on le détruit
         if (objetInstance != null)
         {
             Destroy(objetInstance);
@@ -59,10 +68,14 @@ public class PlacementTicTacToe : MonoBehaviour
         if (texteScanner != null) texteScanner.gameObject.SetActive(true);
         if (texteTour != null) texteTour.gameObject.SetActive(false);
 
+        // Réinitialise la partie
         if (GameManager.instance != null)
             GameManager.instance.InitialiserPartie();
     }
 
+    /// <summary>
+    /// Permet de faire une nouvelle partie.
+    /// </summary>
     public void NouvellePartie()
     {
         // Détruire tous les symboles posés sur le plateau
