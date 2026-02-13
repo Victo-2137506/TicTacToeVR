@@ -1,7 +1,7 @@
 # TicTacToeVR
 
 **Auteur :** Frédérick Bethermat
-**Date : ** 2026-02-07
+**Date :** 2026-02-07
 
 ---
 
